@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --portfolio-bg-main: #0f172a;
+  --portfolio-bg-card: #1e293b;
+  --portfolio-bg-navbar: #111827;
+  --portfolio-primary: #3f5f90;
+  --portfolio-title: #f8fafc;
+  --portfolio-body: #cbd5e1;
+  --portfolio-border: #334155;
+  --portfolio-icon: #3f5f90;
+  --portfolio-hover: #2e4a73;
+  --header-height: 3.5rem;
+}
+
+@theme inline {
+  --color-bg-main: var(--portfolio-bg-main);
+  --color-bg-card: var(--portfolio-bg-card);
+  --color-bg-navbar: var(--portfolio-bg-navbar);
+  --color-primary: var(--portfolio-primary);
+  --color-title: var(--portfolio-title);
+  --color-body: var(--portfolio-body);
+  --color-line: var(--portfolio-border);
+  --color-icon-accent: var(--portfolio-icon);
+  --color-primary-hover: var(--portfolio-hover);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: auto;
+  scroll-padding-top: var(--header-height);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 4rem;
+  }
+}
+
+body {
+  background-color: var(--portfolio-bg-main);
+  color: var(--portfolio-body);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tipografi hero — mobile besar & mudah dibaca, desktop proporsional */
+.text-hero-name {
+  font-size: 2.375rem;
+  line-height: 1.1;
+}
+
+.text-hero-role {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.text-hero-graduate {
+  font-size: 1.1875rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 640px) {
+  .text-hero-name {
+    font-size: 2.75rem;
+  }
+
+  .text-hero-role {
+    font-size: 1.5rem;
+  }
+
+  .text-hero-graduate {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-hero-name {
+    font-size: clamp(2.375rem, 2.6vw + 0.85rem, 3.5rem);
+  }
+
+  .text-hero-role {
+    font-size: clamp(1.4375rem, 1.2vw + 0.7rem, 1.75rem);
+  }
+
+  .text-hero-graduate {
+    font-size: clamp(1.125rem, 0.85vw + 0.65rem, 1.3125rem);
+  }
+}
+
+/* Logo keahlian — mobile: skala per-logo, desktop: isi slot seragam */
+.skill-logo-img {
+  max-height: var(--logo-h);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .skill-logo-img {
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    transform: scale(var(--logo-scale-sm, 1));
+  }
+}
+
+/* Ikon kontak — slot seragam dengan skala per-logo */
+.contact-link-icon {
+  transform: scale(var(--icon-scale, 1));
+}
+
+/* Card terangkat — efek depth / HD */
+.shadow-card-elevated {
+  box-shadow:
+    inset 0 1px 0 0 rgba(248, 250, 252, 0.07),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2),
+    0 20px 40px -12px rgba(0, 0, 0, 0.45),
+    0 16px 48px -16px rgba(63, 95, 144, 0.28);
+}
