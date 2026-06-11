@@ -27,8 +27,8 @@ export function Hero() {
       </div>
 
       {/* Konten */}
-      <Container className="relative z-10 flex min-h-svh flex-col justify-center pt-20 pb-14 sm:justify-start sm:pt-28 sm:pb-20 md:pt-32 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:py-14 xl:gap-10 xl:py-16">
-        <div className="flex w-full max-w-3xl flex-col lg:max-w-none lg:pr-4">
+      <Container className="relative z-10 flex min-h-svh flex-col justify-center pt-20 pb-14 sm:justify-start sm:pt-28 sm:pb-20 md:grid md:grid-cols-2 md:items-center md:gap-6 md:pt-32 md:pb-20 lg:gap-8 lg:py-14 xl:gap-10 xl:py-16">
+        <div className="flex w-full max-w-3xl flex-col md:max-w-none md:pr-4">
           <p className="mb-3.5 text-sm font-medium uppercase tracking-[0.22em] text-body sm:mb-3.5 sm:text-base lg:text-sm lg:tracking-[0.25em]">
             {HERO.greeting}
           </p>

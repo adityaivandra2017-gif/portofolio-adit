@@ -3,7 +3,7 @@ import { HERO } from "@/lib/constants/hero";
 
 export function HeroPhoto() {
   return (
-    <div className="relative hidden w-full items-center justify-center self-center lg:flex">
+    <div className="relative hidden w-full items-center justify-center self-center md:flex">
       <div className="relative">
         {/* Glow halus */}
         <div
