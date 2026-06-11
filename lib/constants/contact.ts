@@ -43,7 +43,7 @@ export const CONTACT_LINKS: readonly ContactLink[] = [
     href: "https://www.linkedin.com/in/aditya-ivandra-s-kom",
     icon: "/images/png/linkedin.png",
     external: true,
-    iconScale: 1.20,
+    iconScale: 0.90,
   },
 ] as const;
 
