@@ -25,7 +25,7 @@ export const CONTACT_LINKS: readonly ContactLink[] = [
     hint: "Klik untuk mengirim email",
     href: "mailto:adityaivandra2017@gmail.com",
     icon: "/images/png/gmail.png",
-    iconScale: 1.43,
+    iconScale: 1.38,
   },
   {
     id: "whatsapp",
@@ -43,7 +43,7 @@ export const CONTACT_LINKS: readonly ContactLink[] = [
     href: "https://www.linkedin.com/in/aditya-ivandra-s-kom",
     icon: "/images/png/linkedin.png",
     external: true,
-    iconScale: 1.43,
+    iconScale: 1.20,
   },
 ] as const;
 
