@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/Button";
+import { ProjectDemoAccounts } from "@/components/sections/proyek/ProjectDemoAccounts";
 import type { Project } from "@/lib/constants/projects";
 
 type ProjectDetailModalProps = {
@@ -176,6 +177,11 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
                 {project.fullDescription}
               </p>
             </div>
+
+            {/* Demo accounts */}
+            {project.demoAccounts && project.demoAccounts.length > 0 && (
+              <ProjectDemoAccounts accounts={project.demoAccounts} />
+            )}
 
             {/* Action */}
             {actionHref && (

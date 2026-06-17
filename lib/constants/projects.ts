@@ -1,5 +1,15 @@
 export type ProjectType = "mobile" | "website";
 
+export type DemoLoginLabel = "Email" | "Username";
+
+export type DemoAccount = {
+  role: string;
+  loginLabel?: DemoLoginLabel;
+  login?: string;
+  password?: string;
+  note?: string;
+};
+
 export type Project = {
   id: string;
   name: string;
@@ -12,6 +22,7 @@ export type Project = {
   type: ProjectType;
   downloadUrl?: string;
   liveUrl?: string;
+  demoAccounts?: readonly DemoAccount[];
 };
 
 export const PROJECTS_SECTION = {
@@ -40,6 +51,18 @@ export const PROJECTS: readonly Project[] = [
     type: "mobile",
     downloadUrl:
       "https://drive.google.com/drive/folders/1adSfwWgJg7w9PFYMHNLZ8njv_eGzT6OC",
+    demoAccounts: [
+      {
+        role: "Admin",
+        loginLabel: "Email",
+        login: "admin@gmail.com",
+        password: "admin12345",
+      },
+      {
+        role: "Masyarakat",
+        note: "Daftar terlebih dahulu, lalu dapat login ke aplikasi.",
+      },
+    ],
   },
   {
     id: "audit-digital-umkm",
@@ -59,6 +82,20 @@ export const PROJECTS: readonly Project[] = [
     imageAlt: "Tampilan dashboard sistem Audit Digital UMKM",
     type: "website",
     liveUrl: "https://audit-digital-umkm.freehosting.dev",
+    demoAccounts: [
+      {
+        role: "Admin",
+        loginLabel: "Username",
+        login: "admin",
+        password: "123456",
+      },
+      {
+        role: "Auditor",
+        loginLabel: "Username",
+        login: "auditor",
+        password: "123456",
+      },
+    ],
   },
   {
     id: "kharisma-motor-padang",
@@ -78,5 +115,19 @@ export const PROJECTS: readonly Project[] = [
     imageAlt: "Tampilan dashboard sistem Kharisma Motor Padang",
     type: "website",
     liveUrl: "https://kharisma-motor-padang.great-site.net",
+    demoAccounts: [
+      {
+        role: "Admin",
+        loginLabel: "Email",
+        login: "admin@gmail.com",
+        password: "123456",
+      },
+      {
+        role: "Pimpinan",
+        loginLabel: "Email",
+        login: "pimpinan@gmail.com",
+        password: "123456",
+      },
+    ],
   },
 ] as const;
