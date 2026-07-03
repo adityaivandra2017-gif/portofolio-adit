@@ -17,9 +17,14 @@ export function Skills() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:grid-rows-2 sm:gap-6 lg:mt-14 lg:gap-7">
+        <div className="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-3 sm:gap-6 lg:mt-14 lg:gap-7">
           {SKILL_CATEGORIES.map((category) => (
-            <SkillCategory key={category.id} category={category} />
+            <SkillCategory
+              key={category.id}
+              category={category}
+              layout={category.id === "frontend" ? "banner" : "compact"}
+              className={category.id === "frontend" ? "sm:col-span-3" : "sm:h-full"}
+            />
           ))}
         </div>
       </Container>

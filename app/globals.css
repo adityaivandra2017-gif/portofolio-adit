@@ -92,16 +92,19 @@ body {
 
 /* Logo keahlian — mobile: skala per-logo, desktop: isi slot seragam */
 .skill-logo-img {
-  max-height: var(--logo-h);
-  width: 100%;
+  max-height: min(var(--logo-h), 100%);
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 @media (min-width: 640px) {
   .skill-logo-img {
     max-height: 100%;
-    height: 100%;
-    width: 100%;
-    transform: scale(var(--logo-scale-sm, 1));
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
   }
 }
 
