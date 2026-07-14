@@ -21,17 +21,14 @@ const displayStyles: Record<LogoDisplay, string> = {
   invert: "brightness-0 invert",
 };
 
-function getDesktopSlot(
-  isWide: boolean,
-  layout: CategoryLayout,
-) {
+function getDesktopSlot(isWide: boolean, layout: CategoryLayout): string {
   if (layout === "banner") {
-    if (isWide) return "sm:h-[5.5rem] sm:w-full sm:max-w-[11rem]";
-    return "sm:h-[6rem] sm:w-full sm:max-w-[8.5rem]";
+    if (isWide) return "sm:h-[4.5rem] sm:w-[5.5rem] sm:max-w-[5.5rem] sm:shrink-0";
+    return "sm:h-[5.25rem] sm:w-[3.75rem] sm:max-w-[3.75rem] sm:shrink-0";
   }
 
-  if (isWide) return "sm:h-[6.25rem] sm:w-full sm:max-w-full";
-  return "sm:h-[7rem] sm:w-full sm:max-w-full";
+  if (isWide) return "sm:h-[4rem] sm:w-[5.25rem] sm:max-w-[5.25rem] sm:shrink-0";
+  return "sm:h-[4.75rem] sm:w-[4rem] sm:max-w-[4rem] sm:shrink-0";
 }
 
 function getMobileSlot(isWide: boolean, centerLast: boolean) {
@@ -63,21 +60,25 @@ export function SkillLogo({
 }: SkillLogoProps) {
   const display = item.display ?? "lighten";
   const mobileScale = item.sizeMobile ?? item.size ?? 1;
+  const desktopScale = item.sizeDesktop;
   const isWide = item.wide ?? false;
   const { liMinH, slot } = getMobileSlot(isWide, centerLast);
   const desktopSlot = getDesktopSlot(isWide, layout);
 
   return (
     <li
-      className={`group flex min-w-0 items-center justify-center overflow-hidden px-1 sm:min-h-0 sm:overflow-visible sm:px-1 ${
+      className={`group flex min-w-0 items-center justify-center overflow-hidden px-0.5 sm:min-h-0 sm:w-auto sm:shrink-0 sm:overflow-visible ${
         desktopSpan ? "sm:col-span-2" : ""
       } ${centerLast ? "col-span-2 sm:col-span-1" : ""} ${liMinH}`}
     >
       <div
-        className={`flex w-full items-center justify-center transition-transform duration-300 ease-out group-hover:-translate-y-0.5 ${slot} ${desktopSlot}`}
+        className={`skill-logo-slot flex w-full items-center justify-center transition-transform duration-300 ease-out group-hover:-translate-y-0.5 ${slot} ${desktopSlot}${
+          desktopScale != null ? " has-desktop-scale" : ""
+        }`}
         style={
           {
             "--logo-h": `${BASE_HEIGHT_MOBILE_REM * mobileScale}rem`,
+            ...(desktopScale != null && { "--desktop-scale": desktopScale }),
           } as CSSProperties
         }
         title={item.name}

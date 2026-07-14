@@ -27,6 +27,40 @@ function MenuIcon({ open }: { open: boolean }) {
   );
 }
 
+function ChevronIcon() {
+  return (
+    <svg
+      className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+      aria-hidden="true"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  );
+}
+
+type MobileNavLinkProps = {
+  href: string;
+  children: string;
+  onClick: () => void;
+};
+
+function MobileNavLink({ href, children, onClick }: MobileNavLinkProps) {
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      className="group flex w-full items-center justify-between gap-3 rounded-lg px-3 py-3.5 text-base font-medium text-body transition-all duration-200 hover:bg-primary/10 hover:text-title active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset sm:px-4 sm:py-4"
+    >
+      <span className="min-w-0 truncate">{children}</span>
+      <ChevronIcon />
+    </a>
+  );
+}
+
 type NavbarProps = {
   onMenuOpenChange?: (open: boolean) => void;
 };
@@ -110,22 +144,30 @@ export function Navbar({ onMenuOpenChange }: NavbarProps) {
       {/* Mobile menu */}
       <div
         id="mobile-menu"
-        className={`fixed inset-x-0 top-14 z-40 border-b border-line bg-bg-card/98 backdrop-blur-md transition-all duration-300 sm:top-16 md:hidden ${
+        className={`fixed inset-x-0 top-14 z-40 border-b border-line/80 bg-bg-card/98 shadow-[0_16px_48px_rgba(0,0,0,0.38)] backdrop-blur-md transition-all duration-300 sm:top-16 md:hidden ${
           isOpen
             ? "visible translate-y-0 opacity-100"
             : "pointer-events-none invisible -translate-y-2 opacity-0"
         }`}
       >
-        <ul className="flex flex-col gap-1.5 px-4 py-3 sm:px-6 sm:py-3.5">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.href}>
-              <NavLink
-                href={item.href}
-                className="w-full justify-start !py-1.5"
-                onClick={handleLinkClick}
-              >
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent"
+          aria-hidden="true"
+        />
+
+        <ul className="flex flex-col px-2 py-2 sm:px-3 sm:py-2.5">
+          {NAV_ITEMS.map((item, index) => (
+            <li
+              key={item.href}
+              className={
+                index < NAV_ITEMS.length - 1
+                  ? "border-b border-line/45 last:border-b-0"
+                  : undefined
+              }
+            >
+              <MobileNavLink href={item.href} onClick={handleLinkClick}>
                 {item.label}
-              </NavLink>
+              </MobileNavLink>
             </li>
           ))}
         </ul>

@@ -106,9 +106,27 @@ body {
     width: auto;
     object-fit: contain;
   }
+
+  .skill-logo-slot.has-desktop-scale .skill-logo-img {
+    transform: scale(var(--desktop-scale));
+    transform-origin: center center;
+  }
 }
 
-/* Ikon kontak — slot seragam dengan skala per-logo */
+/* Logo pengalaman — mobile: skala per-logo, desktop: isi slot seragam */
+.experience-logo-img {
+  max-height: min(var(--logo-h-mobile), 100%);
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+@media (min-width: 640px) {
+  .experience-logo-img {
+    max-height: min(var(--logo-h-desktop), 100%);
+  }
+}
+
 .contact-link-icon {
   transform: scale(var(--icon-scale, 1));
 }

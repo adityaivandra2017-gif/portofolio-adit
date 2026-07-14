@@ -1,6 +1,6 @@
 export const HERO = {
   greeting: "Halo, Saya",
-  graduate: "Information Systems Graduate",
+  graduate: "Information Systems",
   interestPrefix: "Yang tertarik pada",
   role: "Frontend Developer",
   tagline:

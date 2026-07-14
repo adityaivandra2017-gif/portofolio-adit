@@ -9,16 +9,21 @@ type SkillCategoryProps = {
   className?: string;
 };
 
-function getGridClass(
-  count: number,
-  layout: CategoryLayout,
-): string {
-  if (layout === "banner") return "grid-cols-2 sm:grid-cols-7";
+function getListClass(count: number, layout: CategoryLayout): string {
+  if (layout === "banner") {
+    return "grid grid-cols-2 sm:flex sm:flex-nowrap sm:items-center sm:justify-evenly";
+  }
 
-  if (count === 2) return "grid-cols-2";
-  if (count === 3) return "grid-cols-3 sm:grid-cols-3";
-  if (count === 7) return "grid-cols-2";
-  return "grid-cols-3";
+  if (count === 2) {
+    return "grid grid-cols-2 sm:flex sm:flex-nowrap sm:items-center sm:justify-center sm:gap-x-10 lg:gap-x-12";
+  }
+
+  if (count === 3) {
+    return "grid grid-cols-3 sm:flex sm:flex-nowrap sm:items-center sm:justify-evenly";
+  }
+
+  if (count === 7) return "grid grid-cols-2";
+  return "grid grid-cols-3";
 }
 
 function getLogoLayout(
@@ -68,11 +73,7 @@ export function SkillCategory({
       </header>
 
       <ul
-        className={`mt-2.5 grid place-items-center gap-x-2.5 gap-y-2.5 sm:mt-3 sm:flex-1 sm:place-items-center sm:items-center sm:pt-2 ${getGridClass(category.items.length, layout)} ${
-          isBanner
-            ? "sm:content-center sm:gap-x-5 sm:gap-y-3"
-            : "sm:content-center sm:gap-x-3 sm:gap-y-4"
-        }`}
+        className={`mt-2.5 w-full place-items-center gap-x-2.5 gap-y-2.5 sm:mt-3 sm:gap-x-0 sm:gap-y-0 sm:pt-1 ${getListClass(category.items.length, layout)}`}
       >
         {category.items.map((item, index) => {
           const { desktopSpan, centerLast } = getLogoLayout(

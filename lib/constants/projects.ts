@@ -39,7 +39,7 @@ export const PROJECTS: readonly Project[] = [
       "Aplikasi mobile untuk administrasi digital dan komunikasi langsung melalui live chat.",
     fullDescription:
       "Merancang aplikasi mobile untuk mendukung administrasi digital, serta komunikasi antara pengguna dengan sistem melalui fitur live chat.",
-    technologies: ["React Native", "Firebase"],
+    technologies: ["React Native", "Firebase", "Cloudinary"],
     features: [
       "Pengajuan Surat",
       "Permohonan Surat",

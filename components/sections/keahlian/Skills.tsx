@@ -23,7 +23,7 @@ export function Skills() {
               key={category.id}
               category={category}
               layout={category.id === "frontend" ? "banner" : "compact"}
-              className={category.id === "frontend" ? "sm:col-span-3" : "sm:h-full"}
+              className={category.id === "frontend" ? "sm:col-span-3" : undefined}
             />
           ))}
         </div>
