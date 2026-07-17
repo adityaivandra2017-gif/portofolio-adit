@@ -22,7 +22,7 @@ export type SkillCategory = {
 export const SKILLS_SECTION = {
   title: "Keahlian",
   subtitle:
-    "Teknologi dan tools yang saya kuasai dalam pengembangan aplikasi web dan mobile.",
+    "Teknologi dan tools yang saya gunakan dalam pengembangan aplikasi web dan mobile.",
 } as const;
 
 export const SKILL_CATEGORIES: readonly SkillCategory[] = [

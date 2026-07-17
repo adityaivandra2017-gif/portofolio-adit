@@ -40,7 +40,7 @@ export const EXPERIENCES: readonly ExperienceItem[] = [
     logoScaleMobile: 1.15,
     logoScale: 1.08,
     period: "30 April 2025 – 31 Mei 2025",
-    field: "Swimming Pool Division",
+    field: "Swimming Pool",
     skills: ["Data Entry", "Inventory", "Customer Service", "Teamwork"],
     description: [
       "Melakukan pencatatan dan monitoring stok perlengkapan operasional.",

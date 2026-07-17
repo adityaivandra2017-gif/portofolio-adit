@@ -9,6 +9,8 @@ type ButtonProps = {
   className?: string;
   target?: string;
   rel?: string;
+  /** Nama file saat unduh (untuk PDF/dokumen di public/) */
+  download?: string;
 };
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -25,6 +27,7 @@ export function Button({
   className = "",
   target,
   rel,
+  download,
 }: ButtonProps) {
   const isExternal = href.startsWith("http");
   const linkTarget = target ?? (isExternal ? "_blank" : undefined);
@@ -33,6 +36,7 @@ export function Button({
   return (
     <a
       href={href}
+      download={download}
       target={linkTarget}
       rel={linkRel}
       className={`inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-main sm:px-7 sm:py-3.5 sm:text-base ${variantStyles[variant]} ${className}`}

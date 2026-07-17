@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+import { AnimatedRole } from "@/components/sections/beranda/AnimatedRole";
 import { HERO } from "@/lib/constants/hero";
 
 export function HeroIntro(): ReactElement {
@@ -12,9 +13,7 @@ export function HeroIntro(): ReactElement {
         <p className="text-base text-body/75 lg:text-[1.0625rem]">
           {HERO.interestPrefix}
         </p>
-        <p className="text-hero-role font-semibold tracking-tight text-primary">
-          {HERO.role}
-        </p>
+        <AnimatedRole />
       </div>
 
       <div

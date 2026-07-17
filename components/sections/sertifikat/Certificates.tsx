@@ -3,17 +3,16 @@
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CertificateCard } from "@/components/sections/sertifikat/CertificateCard";
+import { CertificateCarousel } from "@/components/sections/sertifikat/CertificateCarousel";
 import { CertificateModal } from "@/components/sections/sertifikat/CertificateModal";
 import {
   CERTIFICATES,
   CERTIFICATES_SECTION,
-  type Certificate,
 } from "@/lib/constants/certificates";
 
 export function Certificates() {
-  const [selectedCertificate, setSelectedCertificate] =
-    useState<Certificate | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section id="sertifikat" className="border-t border-line/60 bg-bg-main">
@@ -25,20 +24,20 @@ export function Certificates() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-7 lg:mt-14 lg:grid-cols-3 lg:gap-8">
-          {CERTIFICATES.map((certificate) => (
-            <CertificateCard
-              key={certificate.id}
-              certificate={certificate}
-              onView={setSelectedCertificate}
-            />
-          ))}
+        <div className="mt-10 sm:mt-12 lg:mt-14">
+          <CertificateCarousel
+            certificates={CERTIFICATES}
+            activeIndex={activeIndex}
+            onIndexChange={setActiveIndex}
+            onViewCertificate={() => setIsModalOpen(true)}
+          />
         </div>
       </Container>
 
       <CertificateModal
-        certificate={selectedCertificate}
-        onClose={() => setSelectedCertificate(null)}
+        certificate={CERTIFICATES[activeIndex] ?? null}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
     </section>
   );

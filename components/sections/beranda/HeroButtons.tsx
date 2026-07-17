@@ -15,11 +15,12 @@ export function HeroButtons() {
         {HERO.buttons.projects.label}
       </Button>
       <Button
-        href={HERO.buttons.contact.href}
+        href={HERO.buttons.downloadCv.href}
+        download={HERO.buttons.downloadCv.fileName}
         variant="outline"
         className={heroButtonClass}
       >
-        {HERO.buttons.contact.label}
+        {HERO.buttons.downloadCv.label}
       </Button>
     </div>
   );
