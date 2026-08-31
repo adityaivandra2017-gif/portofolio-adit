@@ -6,7 +6,6 @@ export const CONTACT_SECTION = {
   closing: "Let's build something amazing together.",
   address: {
     plusCode: "QWH6+M4R",
-    short: "Klender, Jakarta Timur",
     detail:
       "Klender, Kec. Duren Sawit, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta",
   },
