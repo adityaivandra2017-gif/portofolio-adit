@@ -20,12 +20,12 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl sm:mt-12 lg:mt-14">
+        <div className="mx-auto mt-10 max-w-3xl sm:mt-12 lg:mt-14 lg:max-w-5xl">
           <h3 className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             {CONTACT_SECTION.contactHeading}
           </h3>
 
-          <div className="mt-5 grid gap-3 sm:mt-7 sm:grid-cols-3 sm:gap-4">
+          <div className="mt-5 grid gap-3 sm:mt-7 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
             {CONTACT_LINKS.map((link) => (
               <ContactLinkCard key={link.id} link={link} />
             ))}

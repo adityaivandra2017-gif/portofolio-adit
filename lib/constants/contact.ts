@@ -20,6 +20,8 @@ export type ContactLink = {
   external?: boolean;
   /** Skala visual di dalam slot ikon seragam (default 1) */
   iconScale?: number;
+  /** Logo gelap — dibalik agar terbaca di latar gelap */
+  iconInvert?: boolean;
 };
 
 export const CONTACT_LINKS: readonly ContactLink[] = [
@@ -48,6 +50,16 @@ export const CONTACT_LINKS: readonly ContactLink[] = [
     icon: "/images/png/linkedin.png",
     external: true,
     iconScale: 0.99,
+  },
+  {
+    id: "github",
+    label: "GitHub",
+    hint: "Lihat Repositori Saya",
+    href: "https://github.com/adityaivandra2017-gif",
+    icon: "/images/png/github.png",
+    external: true,
+    iconScale: 1.12,
+    iconInvert: true,
   },
 ] as const;
 

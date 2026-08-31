@@ -34,7 +34,9 @@ export function ContactLinkCard({ link }: ContactLinkCardProps) {
             alt=""
             width={36}
             height={36}
-            className="contact-link-icon h-full w-full object-contain"
+            className={`contact-link-icon h-full w-full object-contain ${
+              link.iconInvert ? "brightness-0 invert" : ""
+            }`}
             unoptimized
           />
         </div>
