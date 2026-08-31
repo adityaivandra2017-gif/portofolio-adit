@@ -4,7 +4,12 @@ export const CONTACT_SECTION = {
     "Saya terbuka untuk peluang kerja, kolaborasi, maupun diskusi terkait pengembangan web dan aplikasi. Jangan ragu untuk menghubungi saya melalui kontak di bawah ini.",
   contactHeading: "Informasi Kontak",
   closing: "Let's build something amazing together.",
-  address: "Lubuk Basung, Agam, Sumatera Barat",
+  address: {
+    plusCode: "QWH6+M4R",
+    short: "Klender, Jakarta Timur",
+    detail:
+      "Klender, Kec. Duren Sawit, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta",
+  },
 } as const;
 
 export type ContactLink = {
@@ -49,5 +54,5 @@ export const CONTACT_LINKS: readonly ContactLink[] = [
 
 export const CONTACT_ADDRESS = {
   icon: "/images/png/lokasi.png",
-  href: "https://www.google.com/maps/search/?api=1&query=Lubuk+Basung,+Agam,+Sumatera+Barat",
+  href: "https://www.google.com/maps/search/?api=1&query=QWH6%2BM4R,+Klender,+Kec.+Duren+Sawit,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta",
 } as const;

@@ -103,8 +103,34 @@ function CredentialRow({
   );
 }
 
+function InfoNote({ children }: { children: string }) {
+  return (
+    <div className="flex gap-2.5 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 sm:gap-3 sm:px-3.5 sm:py-3">
+      <svg
+        className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <p className="text-xs leading-relaxed text-body/85 sm:text-sm sm:leading-6">
+        {children}
+      </p>
+    </div>
+  );
+}
+
 function DemoAccountCard({ account }: { account: DemoAccount }) {
   const loginLabel = account.loginLabel ?? "Email";
+  const hasCredentials = Boolean(account.login || account.password);
+  const hasNote = Boolean(account.note);
 
   return (
     <div className="relative overflow-hidden rounded-xl border border-line/70 bg-bg-main/35 p-4 sm:p-5">
@@ -119,20 +145,27 @@ function DemoAccountCard({ account }: { account: DemoAccount }) {
         </span>
       </div>
 
-      {account.note ? (
+      {hasNote && !hasCredentials ? (
         <p className="mt-3 text-sm leading-relaxed text-body/85 sm:text-[0.9375rem]">
           {account.note}
         </p>
-      ) : (
-        <div className="mt-3 space-y-2">
-          {account.login && (
-            <CredentialRow label={loginLabel} value={account.login} />
+      ) : hasCredentials ? (
+        <>
+          <div className="mt-3 space-y-2">
+            {account.login && (
+              <CredentialRow label={loginLabel} value={account.login} />
+            )}
+            {account.password && (
+              <CredentialRow label="Password" value={account.password} />
+            )}
+          </div>
+          {hasNote && (
+            <div className="mt-3">
+              <InfoNote>{account.note!}</InfoNote>
+            </div>
           )}
-          {account.password && (
-            <CredentialRow label="Password" value={account.password} />
-          )}
-        </div>
-      )}
+        </>
+      ) : null}
     </div>
   );
 }
@@ -156,7 +189,11 @@ export function ProjectDemoAccounts({ accounts }: ProjectDemoAccountsProps) {
         </p>
       </div>
 
-      <div className="grid gap-3 p-4 sm:grid-cols-2 sm:gap-4 sm:p-5">
+      <div
+        className={`grid gap-3 p-4 sm:gap-4 sm:p-5 ${
+          accounts.length > 1 ? "sm:grid-cols-2" : ""
+        }`}
+      >
         {accounts.map((account) => (
           <DemoAccountCard key={account.role} account={account} />
         ))}

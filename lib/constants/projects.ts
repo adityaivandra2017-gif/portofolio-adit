@@ -33,6 +33,42 @@ export const PROJECTS_SECTION = {
 
 export const PROJECTS: readonly Project[] = [
   {
+    id: "taskflow",
+    name: "TaskFlow – Sistem Manajemen Proyek",
+    shortDescription:
+      "Aplikasi manajemen proyek berbasis web untuk mengatur proyek, tugas, kemajuan, dan kolaborasi tim secara efisien.",
+    fullDescription:
+      "TaskFlow adalah aplikasi manajemen proyek berbasis web yang dirancang untuk membantu tim mengatur proyek, mengelola tugas, memantau kemajuan, dan berkolaborasi secara efisien melalui antarmuka yang modern dan responsif.",
+    technologies: [
+      "Vue.js",
+      "Tailwind CSS",
+      "Laravel",
+      "PostgreSQL",
+      "Cloudinary",
+    ],
+    features: [
+      "Manajemen Proyek",
+      "Manajemen Tugas",
+      "Autentikasi Pengguna",
+      "Dashboard Analitik",
+      "Prioritas & Tenggat Waktu",
+    ],
+    image: "/images/png/tf_dashboard.png",
+    imageAlt: "Tampilan dashboard aplikasi TaskFlow",
+    type: "website",
+    liveUrl: "https://task-flow-frontend-peach-chi.vercel.app",
+    demoAccounts: [
+      {
+        role: "Admin",
+        loginLabel: "Email",
+        login: "admin@gmail.com",
+        password: "123456",
+        note:
+          "Untuk mencoba peran Pengguna, buka menu Pengguna pada navigasi Admin lalu tambahkan akun baru dengan role Admin atau Pengguna.",
+      },
+    ],
+  },
+  {
     id: "disdikbud-agam",
     name: "DisdikbudAgam",
     shortDescription:

@@ -17,7 +17,7 @@ export function ContactLinkCard({ link }: ContactLinkCardProps) {
       href={link.href}
       target={link.external ? "_blank" : undefined}
       rel={link.external ? "noopener noreferrer" : undefined}
-      className="group shadow-card-elevated relative flex items-center gap-3.5 rounded-xl border border-line/80 bg-bg-card px-4 py-3.5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/45 hover:shadow-[0_16px_32px_-10px_rgba(63,95,144,0.3)] sm:flex-col sm:items-center sm:gap-0 sm:px-4 sm:py-5 sm:text-center"
+      className="group shadow-card-elevated relative flex items-center gap-3.5 rounded-xl border border-line/80 bg-bg-card px-4 py-3.5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/45 hover:shadow-[0_16px_32px_-10px_rgba(63,95,144,0.3)] sm:flex-col sm:items-center sm:px-4 sm:py-4 sm:text-center md:py-4.5"
     >
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
@@ -40,11 +40,11 @@ export function ContactLinkCard({ link }: ContactLinkCardProps) {
         </div>
       </div>
 
-      <div className="min-w-0 flex-1 sm:mt-3.5 sm:flex-none">
+      <div className="min-w-0 flex-1 sm:mt-3 sm:flex-none">
         <h3 className="text-sm font-semibold tracking-tight text-title sm:text-base">
           {link.label}
         </h3>
-        <p className="mt-0.5 text-xs leading-snug text-body/75 transition-colors duration-300 group-hover:text-primary/90 sm:mt-1 sm:leading-relaxed">
+        <p className="mt-0.5 text-xs leading-snug text-body/75 transition-colors duration-300 group-hover:text-primary/90 sm:mt-1 sm:text-sm sm:leading-relaxed">
           {link.hint}
         </p>
       </div>

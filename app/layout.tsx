@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portofolio | Aditya Ivandra",
   description: "Portofolio profesional Aditya Ivandra",
+  other: {
+    google: "notranslate",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +30,9 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      translate="no"
+      className={`${geistSans.variable} ${geistMono.variable} notranslate h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-bg-main text-body">
         <SmoothScroll />

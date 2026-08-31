@@ -13,8 +13,8 @@ export const HERO = {
     projects: { label: "Lihat Proyek", href: "#proyek" },
     downloadCv: {
       label: "Download CV",
-      href: "/documents/CV Aditya Ivandra.pdf",
-      fileName: "CV Aditya Ivandra.pdf",
+      href: "/documents/CV_ADITYA IVANDRA_JATIM.pdf",
+      fileName: "CV_ADITYA IVANDRA_JATIM.pdf",
     },
   },
   photo: {

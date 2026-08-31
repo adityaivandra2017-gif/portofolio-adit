@@ -117,16 +117,7 @@ export function CertificateCarousel({
           />
 
           {/* Konten berganti per sertifikat */}
-          <motion.div
-            className="mt-5 sm:mt-6"
-            drag={shouldReduceMotion ? false : "x"}
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.12}
-            onDragEnd={(_, info) => {
-              if (info.offset.x < -48) goNext();
-              else if (info.offset.x > 48) goPrev();
-            }}
-          >
+          <div className="mt-5 sm:mt-6">
             <div className="relative min-h-[12.5rem] sm:min-h-[13rem]">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -166,7 +157,7 @@ export function CertificateCarousel({
                 </motion.div>
               </AnimatePresence>
             </div>
-          </motion.div>
+          </div>
 
           {/* Navigasi slide */}
           <div className="mt-6 flex items-center justify-between gap-3 sm:mt-7">
