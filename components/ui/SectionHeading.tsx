@@ -12,7 +12,7 @@ export function SectionHeading({
   return (
     <div className={centered ? "text-center" : undefined}>
       {label && (
-        <p className="text-xs font-medium uppercase tracking-[0.25em] text-primary sm:text-sm">
+        <p className="text-sm font-medium uppercase tracking-[0.25em] text-primary sm:text-sm">
           {label}
         </p>
       )}

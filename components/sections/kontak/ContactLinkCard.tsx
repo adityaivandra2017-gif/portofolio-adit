@@ -41,10 +41,10 @@ export function ContactLinkCard({ link }: ContactLinkCardProps) {
       </div>
 
       <div className="min-w-0 flex-1 sm:mt-3 sm:flex-none">
-        <h3 className="text-sm font-semibold tracking-tight text-title sm:text-base">
+        <h3 className="text-base font-semibold tracking-tight text-title">
           {link.label}
         </h3>
-        <p className="mt-0.5 text-xs leading-snug text-body/75 transition-colors duration-300 group-hover:text-primary/90 sm:mt-1 sm:text-sm sm:leading-relaxed">
+        <p className="mt-0.5 text-sm leading-snug text-body/80 transition-colors duration-300 group-hover:text-primary/90 sm:mt-1 sm:text-sm sm:leading-relaxed">
           {link.hint}
         </p>
       </div>

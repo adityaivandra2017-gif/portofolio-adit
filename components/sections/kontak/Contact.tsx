@@ -15,13 +15,13 @@ export function Contact() {
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
           <SectionHeading title={CONTACT_SECTION.title} centered />
-          <p className="mt-5 text-sm leading-relaxed text-body/85 sm:mt-6 sm:text-base sm:leading-7">
+          <p className="mt-5 text-base leading-7 text-body/90 sm:mt-6 sm:text-base sm:leading-7">
             {CONTACT_SECTION.subtitle}
           </p>
         </div>
 
         <div className="mx-auto mt-10 max-w-3xl sm:mt-12 lg:mt-14">
-          <h3 className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
+          <h3 className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             {CONTACT_SECTION.contactHeading}
           </h3>
 
@@ -53,10 +53,10 @@ export function Contact() {
               </div>
             </div>
             <div className="min-w-0 flex-1 text-left">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary/90 sm:text-sm">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary/90">
                 Lokasi
               </p>
-              <p className="mt-1 text-sm leading-relaxed text-title transition-colors duration-300 group-hover:text-primary/90 sm:text-[0.9375rem] sm:leading-7">
+              <p className="mt-1 text-base leading-7 text-title transition-colors duration-300 group-hover:text-primary/90 sm:text-[0.9375rem] sm:leading-7">
                 <span className="notranslate whitespace-nowrap font-medium" translate="no">
                   {CONTACT_SECTION.address.plusCode}
                 </span>
@@ -76,7 +76,7 @@ export function Contact() {
             <div className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_rgba(63,95,144,0.6)]" />
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50 sm:w-16" />
           </div>
-          <p className="mt-6 font-medium italic tracking-wide text-title/90 sm:mt-7 sm:text-lg lg:text-xl">
+          <p className="mt-6 text-base font-medium italic tracking-wide text-title/90 sm:mt-7 sm:text-lg lg:text-xl">
             {CONTACT_SECTION.closing}
           </p>
         </div>

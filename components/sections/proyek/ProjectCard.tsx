@@ -48,7 +48,7 @@ export function ProjectCard({ project, onOpenDetail }: ProjectCardProps) {
             {project.name}
           </h3>
 
-          <p className="mt-3 flex-1 text-sm leading-relaxed text-body/90 sm:text-base sm:leading-7">
+          <p className="mt-3 flex-1 text-base leading-7 text-body/90 sm:text-base sm:leading-7">
             {project.shortDescription}
           </p>
 

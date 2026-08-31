@@ -63,7 +63,7 @@ export function SkillCategory({
       />
 
       <header className="flex shrink-0 flex-col">
-        <h3 className="text-sm font-bold leading-tight tracking-tight text-title sm:text-lg">
+        <h3 className="text-base font-bold leading-tight tracking-tight text-title sm:text-lg">
           {category.title}
         </h3>
         <div

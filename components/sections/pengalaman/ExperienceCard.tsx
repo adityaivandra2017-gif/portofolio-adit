@@ -42,7 +42,7 @@ function BulletIcon() {
 
 function SectionLabel({ children }: { children: string }) {
   return (
-    <h4 className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-primary/90 sm:text-xs">
+    <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-primary/90 sm:text-xs">
       {children}
     </h4>
   );
@@ -100,27 +100,27 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
           aria-hidden="true"
         />
 
-        <div className="relative flex flex-1 flex-col p-3.5 sm:p-5">
+        <div className="relative flex flex-1 flex-col p-4 sm:p-5">
           {/* Header — badge di atas, logo sejajar info perusahaan */}
           <div>
-            <span className="inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-2.5 py-0.5 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-primary sm:text-xs">
+            <span className="inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
               {experience.typeLabel}
             </span>
 
-            <div className="mt-2 flex items-center gap-3 sm:mt-2.5 sm:gap-4">
+            <div className="mt-2.5 flex items-center gap-3 sm:mt-2.5 sm:gap-4">
               <ExperienceLogo experience={experience} />
 
               <div className="min-w-0 flex-1 text-left">
-                <h3 className="text-[0.9375rem] font-bold leading-snug tracking-tight text-title sm:text-lg">
+                <h3 className="text-lg font-bold leading-snug tracking-tight text-title sm:text-lg">
                   {experience.company}
                 </h3>
 
-                <p className="mt-1 inline-flex items-center gap-1.5 text-[0.6875rem] text-body/75 sm:mt-1.5 sm:text-sm">
+                <p className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-body/80 sm:mt-1.5 sm:text-sm">
                   <CalendarIcon />
                   <time dateTime="2025-04-30/2025-05-31">{experience.period}</time>
                 </p>
 
-                <p className="mt-1.5 text-[0.6875rem] leading-relaxed text-body/85 sm:mt-2 sm:text-sm">
+                <p className="mt-1.5 text-sm leading-relaxed text-body/90 sm:mt-2 sm:text-sm">
                   <span className="font-medium text-title/90">Bidang:</span>{" "}
                   {experience.field}
                 </p>
@@ -136,10 +136,10 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
           {/* Keterampilan */}
           <div>
             <SectionLabel>Keterampilan</SectionLabel>
-            <ul className="mt-1.5 flex flex-wrap justify-start gap-1.5 sm:mt-2 sm:gap-2">
+            <ul className="mt-2 flex flex-wrap justify-start gap-1.5 sm:mt-2 sm:gap-2">
               {experience.skills.map((skill) => (
                 <li key={skill}>
-                  <span className="inline-flex rounded-md border border-primary/25 bg-primary/10 px-2 py-0.5 text-[0.6875rem] font-medium text-title sm:px-2.5 sm:py-1 sm:text-xs">
+                  <span className="inline-flex rounded-md border border-primary/25 bg-primary/10 px-2.5 py-1 text-xs font-medium text-title sm:px-2.5 sm:py-1 sm:text-xs">
                     {skill}
                   </span>
                 </li>
@@ -150,11 +150,11 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
           {/* Deskripsi */}
           <div className="mt-3 sm:mt-3.5">
             <SectionLabel>Deskripsi</SectionLabel>
-            <ul className="mt-1.5 grid gap-1.5 sm:mt-2 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-2">
+            <ul className="mt-2 grid gap-2 sm:mt-2 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-2">
               {experience.description.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-2 text-[0.6875rem] leading-relaxed text-body sm:text-sm sm:leading-6"
+                  className="flex items-start gap-2 text-sm leading-6 text-body sm:text-sm sm:leading-6"
                 >
                   <BulletIcon />
                   <span>{item}</span>

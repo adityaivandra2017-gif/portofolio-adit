@@ -19,7 +19,7 @@ export function Projects() {
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
           <SectionHeading title={PROJECTS_SECTION.title} centered />
-          <p className="mt-5 text-sm leading-relaxed text-body/85 sm:mt-6 sm:text-base sm:leading-7">
+          <p className="mt-5 text-base leading-7 text-body/90 sm:mt-6 sm:text-base sm:leading-7">
             {PROJECTS_SECTION.subtitle}
           </p>
         </div>

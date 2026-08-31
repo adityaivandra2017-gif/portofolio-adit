@@ -106,7 +106,7 @@ export function CertificateCarousel({
                 unoptimized
               />
             </div>
-            <p className="mt-3 text-xs font-medium text-primary/90 sm:mt-3.5 sm:text-sm">
+            <p className="mt-3 text-sm font-medium text-primary/90 sm:mt-3.5 sm:text-sm">
               {active.issuer} • {active.year}
             </p>
           </div>
@@ -147,7 +147,7 @@ export function CertificateCarousel({
                     {active.description.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-2 text-xs leading-relaxed text-body sm:text-sm sm:leading-6"
+                        className="flex items-start gap-2 text-sm leading-6 text-body sm:text-sm sm:leading-6"
                       >
                         <BulletIcon />
                         <span>{item}</span>
@@ -187,7 +187,7 @@ export function CertificateCarousel({
                   />
                 ))}
               </div>
-              <p className="text-[0.6875rem] font-medium tabular-nums text-body/70 sm:text-xs">
+              <p className="text-xs font-medium tabular-nums text-body/70 sm:text-xs">
                 {activeIndex + 1} / {total}
               </p>
             </div>
